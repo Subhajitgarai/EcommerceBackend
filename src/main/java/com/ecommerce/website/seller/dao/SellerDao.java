@@ -10,7 +10,6 @@ import java.util.Optional;
 
 @Repository
 public interface SellerDao extends JpaRepository<SellerDetails,String> {
-    //@Query("select  u from SellerDetails u where u.sellerEmail=:b and u.password=:p")
     public Optional<SellerDetails>findBySellerEmail(String sellerEmail);
 
 }
