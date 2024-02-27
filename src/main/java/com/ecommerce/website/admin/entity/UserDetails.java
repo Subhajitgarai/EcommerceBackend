@@ -1,8 +1,11 @@
 package com.ecommerce.website.admin.entity;
 
+import com.ecommerce.website.user.entity.OrderDetails;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Getter
@@ -15,4 +18,5 @@ public class UserDetails {
     private String userAddress;
     private String userPh;
     private String userPass;
+//    private List<OrderDetails>orderDetails;
 }

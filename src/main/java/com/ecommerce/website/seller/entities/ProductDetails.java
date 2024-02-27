@@ -15,7 +15,7 @@ import java.util.List;
 @Table(name = "product_details") // Specify the table name explicitly
 public class ProductDetails {
     @Id
-    private String productId; // Corrected data type to Long
+    private String productId;
     private String productName;
     private String productPrice;
     private String productLocation;
