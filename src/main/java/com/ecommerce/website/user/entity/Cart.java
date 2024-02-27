@@ -13,10 +13,8 @@ import java.util.List;
 @Entity
 public class Cart {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int cartId;
+    private String  productId;
     private int userId;
-    private String productId;
     private String productName;
     private String productPrice;
     private String productStatus;
