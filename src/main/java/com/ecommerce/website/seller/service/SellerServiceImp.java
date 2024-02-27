@@ -31,12 +31,12 @@ public class SellerServiceImp implements SellerService{
         return sellerDao.findById(sellerEmail);
     }
     public ResponseEntity<?> login(String sellerEmail, String password){
-        Optional<SellerDetails> byId = sellerDao.findBySellerEmail(sellerEmail);
-        if (byId.isEmpty()){
+        Optional<SellerDetails> byEmail = sellerDao.findBySellerEmail(sellerEmail);
+        if (byEmail.isEmpty()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Seller is not Registered with the database !!");
         }
         else {
-            SellerDetails seller = byId.get();
+            SellerDetails seller = byEmail.get();
             if (seller.getPassword().equals(password)){
                 return new ResponseEntity<>(seller, HttpStatus.OK);
             }
@@ -47,12 +47,12 @@ public class SellerServiceImp implements SellerService{
 
     }
     public ResponseEntity<?>updatePass(String sellerEmail,String oldPass, String newPass){
-        Optional<SellerDetails> byId = sellerDao.findBySellerEmail(sellerEmail);
-        if (byId.isEmpty()){
+        Optional<SellerDetails> byEmail = sellerDao.findBySellerEmail(sellerEmail);
+        if (byEmail.isEmpty()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Seller Not Present");
         }
         else {
-            SellerDetails seller = byId.get();
+            SellerDetails seller = byEmail.get();
             if (seller.getPassword().equals(oldPass)){
                 seller.setPassword(newPass);
                 sellerDao.save(seller);
