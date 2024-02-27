@@ -1,5 +1,6 @@
 package com.ecommerce.website.seller.entities;
 
+import com.ecommerce.website.user.entity.Cart;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,5 +20,7 @@ public class ProductDetails {
     private String productName;
     private String productPrice;
     private String productLocation;
-
+//    @OneToMany(cascade = CascadeType.ALL,targetEntity = Cart.class)
+//    @JoinColumn(name="productId",referencedColumnName = "productId")
+//    private List<Cart> cart;
 }
