@@ -12,10 +12,10 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "seller_details") // Specify the table name explicitly
+@Table(name = "seller_details")
 public class SellerDetails {
     @Id
-    private String sellerId; // Corrected data type to Long
+    private String sellerId;
     private String sellerEmail;
     private String sellerName;
     private String sellerLocation;
